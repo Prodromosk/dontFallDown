@@ -16,6 +16,7 @@ public class UiManager : MonoBehaviour
     public Text score;
     public Text highScore1;
     public Text highScore2;
+    //public Text liveScore;
 
     void Awake()
     {
@@ -39,6 +40,7 @@ public class UiManager : MonoBehaviour
 
     public void GameOver()
     {
+        //liveScore.text = PlayerPrefs.GetInt("score").ToString();
         score.text = PlayerPrefs.GetInt("score").ToString();
         highScore2.text = PlayerPrefs.GetInt("highScore").ToString();
         GameOverPanelHolder.SetActive(true);

@@ -21,7 +21,7 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
+        score = -1;
         PlayerPrefs.SetInt("score", score);
     }
 
@@ -31,19 +31,19 @@ public class ScoreManager : MonoBehaviour
         
     }
 
-    void IncrementScore()
-    {
-        score += 1;
-    }
+    //void IncrementScore()
+    //{
+    //    score += 1;
+    //}
 
     public void startScore()
     {
-        InvokeRepeating("IncrementScore", 0.1f, 0.5f);
+        score+= 1;
     }
 
     public void StopScore()
     {
-        CancelInvoke ("IncrementScore");
+        //CancelInvoke ("IncrementScore");
         PlayerPrefs.SetInt("score", score);
 
         if (PlayerPrefs.HasKey("highScore"))
